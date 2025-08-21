@@ -254,6 +254,21 @@ def analyze_signal_processing(binary_string):
     except Exception as e:
         print(f"An error occurred during signal processing analysis: {e}")
 
+def analyze_5bit_chunks(binary_string):
+    """Analyzes the binary string by splitting it into 5-bit chunks."""
+    print("\n[ANALYSIS] Analyzing 5-bit chunks...")
+    print("Methodology: The 300-bit binary string is split into 5-bit chunks to check for patterns. The sequence '11111' is noted as a potential spacer or break.")
+    chunks = [binary_string[i:i+5] for i in range(0, len(binary_string), 5)]
+    chunk_analysis_output_lines = []
+    for chunk in chunks:
+        if chunk == "11111":
+            line = f"-> {chunk} (potential spacer)"
+        else:
+            line = f"   {chunk}"
+        print(line)
+        chunk_analysis_output_lines.append(line)
+    return "\n".join(chunk_analysis_output_lines)
+
 def new_analysis_pipeline():
     print("="*60)
     # Use constants for the candidate string for consistency.
@@ -463,7 +478,7 @@ def model_system_physics():
     print("  - Objective: Search for any anomalous burst of gamma rays, x-rays, or neutrinos from the target coordinates within the time window of the Wow! signal.")
 
 # --- LLM Integration ---
-def ask_llama(analysis_summary, binary_string):
+def ask_llama(analysis_summary, binary_string, five_bit_chunk_analysis):
     print("\n--- Contacting Llama instance for analysis ---")
     
     prompt = f"""
@@ -480,6 +495,12 @@ def ask_llama(analysis_summary, binary_string):
     {binary_string}
     ```
 
+    **5-bit Chunk Analysis:**
+    The binary string was split into 5-bit chunks. The sequence '11111' appears to be a break or spacer.
+    ```
+    {five_bit_chunk_analysis}
+    ```
+
     **Description of Visualizations:**
     - **20x15 and 15x20 Images:** The binary data was reshaped into two monochrome bitmap images. These images show a seemingly random pattern of black and white pixels.
     - **Time-Series Plot:** The binary data was plotted as a time-series signal, showing the sequence of 0s and 1s.
@@ -488,7 +509,7 @@ def ask_llama(analysis_summary, binary_string):
     - **Geometric Visualizations:** The binary data was visualized as a 6x6 bitmap and a spherical map.
     - **Quantum Evolution:** The binary data was used as the initial state for a quantum evolution model, and the results were visualized.
 
-    Based on this comprehensive analysis, including the raw data and descriptions of the visualizations, what is your assessment? 
+    Based on this comprehensive analysis, including the raw data, the 5-bit chunk analysis, and descriptions of the visualizations, what is your assessment? 
     Please provide a synopsis, highlight the most significant findings, and suggest concrete next steps for further analysis or decoding.
     Suggest analysis techniques, cryptographic methods, or any other relevant approaches that could help in understanding the nature of this signal which can be executed in python.
     """
@@ -552,7 +573,7 @@ def main():
         return
    
     final_binary_message = bin(final_decimal)[2:]
-    print(f" -> Final Binary Message Generated ({len(final_binary_message)} bits).")
+    print(f" -> Final Binary Message Generated ({len(final_binary_message)} bits):\n{final_binary_message}")
 
     # --- STAGE 2: ANALYSIS ---
     print("\n" + "="*70)
@@ -571,6 +592,7 @@ def main():
     analyze_ecc(final_binary_message)
     analyze_with_ml(final_binary_message)
     analyze_signal_processing(final_binary_message)
+    five_bit_chunk_analysis = analyze_5bit_chunks(final_binary_message)
     image_paths.extend(image_slicer.analyze_layered_images(final_binary_message, 3, constants.OUTPUT_DIR))
     image_paths.extend(image_slicer.analyze_parity_layers(final_binary_message, constants.OUTPUT_DIR))
     hamming_paths = image_slicer.analyze_with_hamming_code(final_binary_message, 20, 15, constants.OUTPUT_DIR)
@@ -594,7 +616,7 @@ def main():
     print(analysis_summary)
 
     # --- STAGE 3: LLM ANALYSIS ---
-    ask_llama(analysis_summary, final_binary_message)
+    ask_llama(analysis_summary, final_binary_message, five_bit_chunk_analysis)
 
     # --- STAGE 4: GENERATE HTML REPORT ---
     print("\n" + "="*70)

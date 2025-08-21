@@ -37,3 +37,8 @@
 section {
   margin-bottom: 40px;
 }
+
+.gif-small {
+  width: 50%;
+  height: auto;
+}
