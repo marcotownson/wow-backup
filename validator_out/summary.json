@@ -1,0 +1,737 @@
+{
+  "length": 300,
+  "ones": 167,
+  "zeros": 133,
+  "semantic": {
+    "per_width": {
+      "5": {
+        "best_offset": 0,
+        "score": 1.0,
+        "tokens_csv": "validator_out\\semantic_tokens_w5_o0.csv",
+        "num_hits": [
+          [
+            22,
+            2,
+            "big"
+          ],
+          [
+            40,
+            26,
+            "little"
+          ],
+          [
+            50,
+            2,
+            "big"
+          ],
+          [
+            56,
+            26,
+            "little"
+          ]
+        ]
+      },
+      "6": {
+        "best_offset": 0,
+        "score": 1.0,
+        "tokens_csv": "validator_out\\semantic_tokens_w6_o0.csv",
+        "num_hits": []
+      },
+      "7": {
+        "best_offset": 0,
+        "score": 1.0,
+        "tokens_csv": "validator_out\\semantic_tokens_w7_o0.csv",
+        "num_hits": [
+          [
+            7,
+            26,
+            "little"
+          ],
+          [
+            15,
+            72,
+            "big"
+          ],
+          [
+            31,
+            26,
+            "little"
+          ]
+        ]
+      },
+      "8": {
+        "best_offset": 0,
+        "score": 1.0,
+        "tokens_csv": "validator_out\\semantic_tokens_w8_o0.csv",
+        "num_hits": []
+      },
+      "9": {
+        "best_offset": 7,
+        "score": 0.625,
+        "tokens_csv": "validator_out\\semantic_tokens_w9_o7.csv",
+        "num_hits": []
+      }
+    },
+    "ascii": {
+      "7": {
+        "best_offset": 0,
+        "print_ratio": 0.7857142857142857,
+        "csv": "validator_out\\ascii_mode7_o0.csv",
+        "equations": []
+      },
+      "8": {
+        "best_offset": 3,
+        "print_ratio": 0.4594594594594595,
+        "csv": "validator_out\\ascii_mode8_o3.csv",
+        "equations": []
+      }
+    },
+    "alternate_encodings": {
+      "base36": {
+        "decoded_string": "wb9x87c71twvr64oj6fg633ix273l3g11y6ig72hvff1b1beft88onu5mn",
+        "eq_matches": []
+      },
+      "base64": {
+        "decoded_string": "z+eO98cmLBh1zY4HJshNN//AYsGbg4r81l7orIN9xwXJ/t5c7/A=",
+        "eq_matches": []
+      }
+    },
+    "chinese_analysis": {}
+  },
+  "special_numbers": {
+    "26": {
+      "binary": "11010",
+      "big_endian_hits": [
+        66,
+        116,
+        192,
+        209
+      ],
+      "little_endian_hits": [
+        49,
+        68,
+        149,
+        181,
+        194,
+        200,
+        217,
+        252,
+        280
+      ]
+    },
+    "72": {
+      "binary": "1001000",
+      "big_endian_hits": [
+        105,
+        221
+      ],
+      "little_endian_hits": [
+        110
+      ]
+    },
+    "1868": {
+      "binary": "11101001100",
+      "big_endian_hits": [],
+      "little_endian_hits": []
+    },
+    "2": {
+      "binary": "10",
+      "big_endian_hits": [
+        1,
+        10,
+        16,
+        22,
+        27,
+        33,
+        39,
+        42,
+        46,
+        50,
+        53,
+        60,
+        67,
+        69,
+        73,
+        77,
+        80,
+        86,
+        95,
+        98,
+        102,
+        105,
+        108,
+        113,
+        117,
+        119,
+        123,
+        137,
+        146,
+        150,
+        153,
+        160,
+        164,
+        168,
+        176,
+        180,
+        182,
+        189,
+        193,
+        195,
+        198,
+        201,
+        206,
+        210,
+        212,
+        216,
+        218,
+        221,
+        224,
+        231,
+        237,
+        241,
+        247,
+        253,
+        257,
+        260,
+        270,
+        273,
+        278,
+        281,
+        285,
+        290
+      ],
+      "little_endian_hits": [
+        3,
+        12,
+        19,
+        23,
+        28,
+        36,
+        41,
+        44,
+        49,
+        51,
+        58,
+        64,
+        68,
+        70,
+        75,
+        78,
+        83,
+        92,
+        97,
+        100,
+        103,
+        107,
+        112,
+        115,
+        118,
+        121,
+        124,
+        144,
+        149,
+        151,
+        158,
+        162,
+        165,
+        173,
+        179,
+        181,
+        183,
+        191,
+        194,
+        196,
+        200,
+        202,
+        207,
+        211,
+        215,
+        217,
+        219,
+        223,
+        229,
+        232,
+        238,
+        244,
+        252,
+        254,
+        259,
+        262,
+        271,
+        274,
+        280,
+        282,
+        287,
+        291
+      ]
+    },
+    "144": {
+      "binary": "10010000",
+      "big_endian_hits": [
+        105,
+        221
+      ],
+      "little_endian_hits": [
+        109
+      ]
+    },
+    "796": {
+      "binary": "1100011100",
+      "big_endian_hits": [
+        32,
+        79,
+        240
+      ],
+      "little_endian_hits": []
+    },
+    "1420": {
+      "binary": "10110001100",
+      "big_endian_hits": [],
+      "little_endian_hits": []
+    },
+    "4556": {
+      "binary": "1000111001100",
+      "big_endian_hits": [],
+      "little_endian_hits": []
+    }
+  },
+  "equation_candidates": [
+    {
+      "type": "symbolic_pythagorean",
+      "formula": "28^2 + 2^2 = 28^2",
+      "token_start": 49,
+      "bit_start": 245
+    },
+    {
+      "type": "symbolic_axbpc",
+      "formula": "63 = 63 + 0",
+      "token_start": 21,
+      "bit_start": 126
+    },
+    {
+      "type": "symbolic_axbpc",
+      "formula": "63 = 63 + 0",
+      "token_start": 21,
+      "bit_start": 126
+    },
+    {
+      "type": "symbolic_axbpc",
+      "formula": "127 = 124 + 3",
+      "token_start": 18,
+      "bit_start": 126
+    },
+    {
+      "type": "symbolic_axbpc",
+      "formula": "127 = 124 + 3",
+      "token_start": 18,
+      "bit_start": 126
+    },
+    {
+      "type": "symbolic_pythagorean",
+      "formula": "131^2 + 251^2 = 284^2",
+      "token_start": 24,
+      "bit_start": 223
+    }
+  ],
+  "prime_candidates": [
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 1,
+      "bit_start": 5
+    },
+    {
+      "type": "prime",
+      "value": 19,
+      "token_start": 2,
+      "bit_start": 10
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 4,
+      "bit_start": 20
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 5,
+      "bit_start": 25
+    },
+    {
+      "type": "prime",
+      "value": 7,
+      "token_start": 7,
+      "bit_start": 35
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 13,
+      "bit_start": 65
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 15,
+      "bit_start": 75
+    },
+    {
+      "type": "prime",
+      "value": 17,
+      "token_start": 16,
+      "bit_start": 80
+    },
+    {
+      "type": "prime",
+      "value": 3,
+      "token_start": 18,
+      "bit_start": 90
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 20,
+      "bit_start": 100
+    },
+    {
+      "type": "prime",
+      "value": 2,
+      "token_start": 22,
+      "bit_start": 110
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 23,
+      "bit_start": 115
+    },
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 25,
+      "bit_start": 125
+    },
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 26,
+      "bit_start": 130
+    },
+    {
+      "type": "prime",
+      "value": 19,
+      "token_start": 32,
+      "bit_start": 160
+    },
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 37,
+      "bit_start": 185
+    },
+    {
+      "type": "prime",
+      "value": 11,
+      "token_start": 40,
+      "bit_start": 200
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 47,
+      "bit_start": 235
+    },
+    {
+      "type": "prime",
+      "value": 2,
+      "token_start": 50,
+      "bit_start": 250
+    },
+    {
+      "type": "prime",
+      "value": 19,
+      "token_start": 52,
+      "bit_start": 260
+    },
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 53,
+      "bit_start": 265
+    },
+    {
+      "type": "prime",
+      "value": 11,
+      "token_start": 56,
+      "bit_start": 280
+    },
+    {
+      "type": "prime",
+      "value": 19,
+      "token_start": 57,
+      "bit_start": 285
+    },
+    {
+      "type": "prime",
+      "value": 23,
+      "token_start": 58,
+      "bit_start": 290
+    },
+    {
+      "type": "prime",
+      "value": 31,
+      "token_start": 59,
+      "bit_start": 295
+    },
+    {
+      "type": "prime",
+      "value": 61,
+      "token_start": 4,
+      "bit_start": 24
+    },
+    {
+      "type": "prime",
+      "value": 11,
+      "token_start": 8,
+      "bit_start": 48
+    },
+    {
+      "type": "prime",
+      "value": 53,
+      "token_start": 11,
+      "bit_start": 66
+    },
+    {
+      "type": "prime",
+      "value": 7,
+      "token_start": 15,
+      "bit_start": 90
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 19,
+      "bit_start": 114
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 20,
+      "bit_start": 120
+    },
+    {
+      "type": "prime",
+      "value": 43,
+      "token_start": 30,
+      "bit_start": 180
+    },
+    {
+      "type": "prime",
+      "value": 53,
+      "token_start": 32,
+      "bit_start": 192
+    },
+    {
+      "type": "prime",
+      "value": 37,
+      "token_start": 33,
+      "bit_start": 198
+    },
+    {
+      "type": "prime",
+      "value": 59,
+      "token_start": 34,
+      "bit_start": 204
+    },
+    {
+      "type": "prime",
+      "value": 43,
+      "token_start": 36,
+      "bit_start": 216
+    },
+    {
+      "type": "prime",
+      "value": 13,
+      "token_start": 38,
+      "bit_start": 228
+    },
+    {
+      "type": "prime",
+      "value": 61,
+      "token_start": 39,
+      "bit_start": 234
+    },
+    {
+      "type": "prime",
+      "value": 23,
+      "token_start": 42,
+      "bit_start": 252
+    },
+    {
+      "type": "prime",
+      "value": 59,
+      "token_start": 48,
+      "bit_start": 288
+    },
+    {
+      "type": "prime",
+      "value": 103,
+      "token_start": 0,
+      "bit_start": 0
+    },
+    {
+      "type": "prime",
+      "value": 113,
+      "token_start": 2,
+      "bit_start": 14
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 9,
+      "bit_start": 63
+    },
+    {
+      "type": "prime",
+      "value": 127,
+      "token_start": 18,
+      "bit_start": 126
+    },
+    {
+      "type": "prime",
+      "value": 3,
+      "token_start": 20,
+      "bit_start": 140
+    },
+    {
+      "type": "prime",
+      "value": 11,
+      "token_start": 21,
+      "bit_start": 147
+    },
+    {
+      "type": "prime",
+      "value": 3,
+      "token_start": 22,
+      "bit_start": 154
+    },
+    {
+      "type": "prime",
+      "value": 59,
+      "token_start": 41,
+      "bit_start": 287
+    },
+    {
+      "type": "prime",
+      "value": 199,
+      "token_start": 4,
+      "bit_start": 32
+    },
+    {
+      "type": "prime",
+      "value": 7,
+      "token_start": 11,
+      "bit_start": 88
+    },
+    {
+      "type": "prime",
+      "value": 193,
+      "token_start": 19,
+      "bit_start": 152
+    },
+    {
+      "type": "prime",
+      "value": 131,
+      "token_start": 21,
+      "bit_start": 168
+    },
+    {
+      "type": "prime",
+      "value": 131,
+      "token_start": 28,
+      "bit_start": 224
+    },
+    {
+      "type": "prime",
+      "value": 199,
+      "token_start": 30,
+      "bit_start": 240
+    },
+    {
+      "type": "prime",
+      "value": 5,
+      "token_start": 31,
+      "bit_start": 248
+    },
+    {
+      "type": "prime",
+      "value": 239,
+      "token_start": 36,
+      "bit_start": 288
+    },
+    {
+      "type": "prime",
+      "value": 487,
+      "token_start": 0,
+      "bit_start": 7
+    },
+    {
+      "type": "prime",
+      "value": 479,
+      "token_start": 2,
+      "bit_start": 25
+    },
+    {
+      "type": "prime",
+      "value": 29,
+      "token_start": 6,
+      "bit_start": 61
+    },
+    {
+      "type": "prime",
+      "value": 211,
+      "token_start": 12,
+      "bit_start": 115
+    },
+    {
+      "type": "prime",
+      "value": 193,
+      "token_start": 16,
+      "bit_start": 151
+    },
+    {
+      "type": "prime",
+      "value": 311,
+      "token_start": 17,
+      "bit_start": 160
+    },
+    {
+      "type": "prime",
+      "value": 461,
+      "token_start": 20,
+      "bit_start": 187
+    },
+    {
+      "type": "prime",
+      "value": 131,
+      "token_start": 24,
+      "bit_start": 223
+    },
+    {
+      "type": "prime",
+      "value": 251,
+      "token_start": 25,
+      "bit_start": 232
+    }
+  ],
+  "ratio_candidates": [
+    {
+      "type": "ratio",
+      "ratio_of": "30/11",
+      "approx_constant": "E",
+      "token_start": 55,
+      "bit_start": 275
+    }
+  ]
+}

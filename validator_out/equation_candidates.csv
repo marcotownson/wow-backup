@@ -1,0 +1,7 @@
+source,type,text,start
+numeric_symbolic,symbolic_pythagorean,28^2 + 2^2 = 28^2,49
+numeric_symbolic,symbolic_axbpc,63 = 63 + 0,21
+numeric_symbolic,symbolic_axbpc,63 = 63 + 0,21
+numeric_symbolic,symbolic_axbpc,127 = 124 + 3,18
+numeric_symbolic,symbolic_axbpc,127 = 124 + 3,18
+numeric_symbolic,symbolic_pythagorean,131^2 + 251^2 = 284^2,24
