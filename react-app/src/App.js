@@ -6,7 +6,7 @@ import Findings from './components/Findings';
 import { researchData } from './data/researchData';
 import Phase3 from './components/Phase3';
 import LLM from './components/LLM';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
