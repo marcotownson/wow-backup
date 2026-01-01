@@ -32,6 +32,36 @@ body {
   font-size: 1.1rem;
 }
 
+.header-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.header-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: white;
+}
+
+.link-icon {
+  font-size: 1.2rem;
+}
+
 .App-nav {
   background-color: #fff;
   padding: 0.5rem 0;

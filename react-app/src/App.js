@@ -28,6 +28,14 @@ function App() {
       <header className="App-header">
         <h1>{researchData.meta.project}</h1>
         <p>Research by {researchData.meta.creator}</p>
+        <div className="header-links">
+          <a href="https://github.com/marcotownson/wow-backup" target="_blank" rel="noopener noreferrer" className="header-link">
+            <span className="link-icon">📁</span> GitHub
+          </a>
+          <a href="mailto:marco@marcotownson.co.uk" className="header-link">
+            <span className="link-icon">✉️</span> Email
+          </a>
+        </div>
       </header>
       <nav className="App-nav">
         <button onClick={() => navigateTo('home')} className={currentView === 'home' ? 'active' : ''}>Home</button>
