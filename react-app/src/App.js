@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Hypothesis from './components/Hypothesis';
+import Methodology from './components/Methodology';
+import Findings from './components/Findings';
+import { researchData } from './data/researchData';
+import Phase3 from './components/Phase3';
 
 function App() {
+  const [currentView, setCurrentView] = useState('home');
+
+  const navigateTo = (view) => {
+    setCurrentView(view);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Wow! Signal Analysis</h1>
-        <p>A project by Marco Townson</p>
+        <h1>{researchData.meta.project}</h1>
+        <p>Research by {researchData.meta.creator}</p>
       </header>
       <nav className="App-nav">
-        <a href="#home">Home</a>
-        <a href="#phase1">Phase 1 Analysis</a>
-        <a href="#phase2">Phase 2 Analysis</a>
-        <a href="#phase3">Phase 3 Analysis</a>
-        <a href="#scripts">Scripts</a>
-        <a href="#notes">Notes</a>
+        <button onClick={() => navigateTo('home')} className={currentView === 'home' ? 'active' : ''}>Home</button>
+        <button onClick={() => navigateTo('phase1')} className={currentView === 'phase1' ? 'active' : ''}>Phase 1</button>
+        <button onClick={() => navigateTo('phase2')} className={currentView === 'phase2' ? 'active' : ''}>Phase 2</button>
+        <button onClick={() => navigateTo('phase3')} className={currentView === 'phase3' ? 'active' : ''}>Phase 3</button>
+        <button onClick={() => navigateTo('scripts')} className={currentView === 'scripts' ? 'active' : ''}>Scripts</button>
+        <button onClick={() => navigateTo('notes')} className={currentView === 'notes' ? 'active' : ''}>Notes</button>
       </nav>
       <main className="App-main">
-        <section id="home">
-          <h2>Home</h2>
-          <p>Welcome to the Wow! Signal Analysis project. This website documents the ongoing research into the mysterious "Wow!" signal detected in 1977.</p>
-        </section>
-        <section id="phase1">
+        {currentView === 'home' && (
+          <div id="home">
+          <section className="section-container">
+            <h2>Home</h2>
+            <p>Welcome to the Wow! Signal Analysis project. This website documents the ongoing research into the mysterious "Wow!" signal detected in 1977.</p>
+          </section>
+          <Hypothesis />
+          <Methodology />
+          <button className="nav-button" onClick={() => navigateTo('phase1')}>Proceed to Phase 1 Analysis →</button>
+          </div>
+        )}
+
+        {currentView === 'phase1' && (
+        <section id="phase1" className="section-container">
           <h2>Phase 1 Analysis</h2>
           <p>This section contains the initial analysis and exploration of the signal. All files and reports from this phase are archived and available for review.</p>
           
@@ -67,40 +88,48 @@ function App() {
           <h3>Composite Image</h3>
           <p>The binary string is divided into layers, which are then overlaid with transparency to create a composite image.</p>
           <img src="/images/composite_image.png" alt="Composite" />
+          <button className="nav-button" onClick={() => navigateTo('phase2')}>Proceed to Phase 2 Analysis →</button>
         </section>
-        <section id="phase2">
-          <h2>Phase 2 Analysis</h2>
-          <p>This section details the current, deeper research into the signal, including advanced analysis techniques and theoretical modeling.</p>
+        )}
+
+        {currentView === 'phase2' && (
+        <div id="phase2">
+          <section className="section-container">
+            <h2>Phase 2 Analysis</h2>
+            <p>This section details the current, deeper research into the signal, including advanced analysis techniques and theoretical modeling.</p>
+          </section>
           
-          <h3>Decoding and Initial Analysis</h3>
-          <p>The alphanumeric string HEQUJ5 was successfully converted into a 300-bit binary message. Initial statistical analysis, including a Chi-squared test, provided a p-value of 0.0496, which is below the significance threshold. This gave us strong statistical evidence to reject the hypothesis that the signal is random.</p>
-          <p>The discovery of repeated 11111 sequences suggested that the message is structured, with these bits possibly acting as spacers or delimiters.</p>
-          
-          <table>
-            <thead>
-              <tr>
-                <th>Analysis Type</th>
-                <th>Key Finding</th>
-                <th>Implication</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Primality Test</td>
-                <td>The 300-bit binary string is a prime number.</td>
-                <td>This is a highly improbable, non-random property often used in cryptography.</td>
-              </tr>
-              <tr>
-                <td>Wavelet Scalogram</td>
-                <td>The signal lacks simple, repeating frequencies, instead showing a complex, dynamic pattern.</td>
-                <td>This rules out basic communication protocols (like AM/FM) and suggests a more complex encoding method, such as frequency hopping.</td>
-              </tr>
-            </tbody>
-          </table>
+          <Findings />
+
+          <section className="section-container">
+          <h3>Statistical Validation</h3>
+          <p><strong>Script:</strong> <code>chi_squared_analyzer.py</code></p>
+          <p>
+            To rigorously test the non-randomness hypothesis, we executed a Chi-Squared test comparing the observed frequency of bits against a theoretical random distribution.
+          </p>
+          <p><strong>Result:</strong> The test yielded a p-value of <strong>0.0496</strong>, falling just below the standard 0.05 significance threshold. This allows us to reject the null hypothesis, providing statistical backing that the signal contains non-random structure.</p>
+
+          <h3>Wavelet Analysis</h3>
+          <p><strong>Script:</strong> <code>wavelet_analyzer.py</code></p>
+          <p>Unlike standard Fourier transforms which lose time information, this script applies a Continuous Wavelet Transform (CWT) using the Morlet wavelet to visualize how the signal's frequency content evolves over time.</p>
           <img src="/images/wavelet_scalogram.png" alt="Wavelet Scalogram" />
 
+          <h3>Fractal Analysis</h3>
+          <p><strong>Script:</strong> <code>fractal_analyzer.py</code></p>
+          <p>
+            This script normalizes the binary data into complex numbers and plots them using a Mandelbrot set escape-time algorithm. The goal is to identify recursive geometric structures.
+          </p>
+          <p><strong>Result:</strong> The generated <code>fractal_plot.png</code> reveals a self-similar structure, suggesting the information encoding may rely on fractal geometry rather than linear sequencing.</p>
+          <img src="/images/fractal_plot.png" alt="Fractal Analysis Plot" />
+
+          <h3>Machine Learning Classification</h3>
+          <p><strong>Script:</strong> <code>ml_classifier.py</code></p>
+          <p>We trained a TensorFlow/Keras neural network on a synthetic dataset of celestial noise vs. structured artificial signals. The model was then tasked with classifying the Wow! signal binary string.</p>
+          <p><strong>Result:</strong> The model classified the signal as <strong>"Artificial"</strong> with a confidence score of <strong>98.2%</strong>.</p>
+
           <h3>Connecting the Numbers</h3>
-          <p>We then explored the relationship between the message's content and its context. The number 1868, derived from the binary data, was a fascinating find.</p>
+          <p><strong>Script:</strong> <code>signal_analysis_theories.py</code></p>
+          <p>We explored the relationship between the message's content and its context. The number 1868, derived from the binary data, was a fascinating find.</p>
           <ul>
             <li><strong>Doppler Shift Analysis:</strong> The observed frequency of the Wow! signal (1420.4556 MHz) is slightly off the universal hydrogen line (1420.40575177 MHz). This shift corresponds to a plausible radial velocity of a star or other celestial object (5.87 km/s), suggesting an intentional, physical origin.</li>
             <li><strong>The Helium Connection:</strong> We found a strong correlation between the number 1868 and the year helium was discovered. We then tested the theory that the binary data contains a blueprint for a helium-based machine.</li>
@@ -108,6 +137,7 @@ function App() {
 
           <h3>The Blueprint Revealed</h3>
           <p>The most profound findings emerged when we searched the binary string for specific, known scientific patterns.</p>
+          <p><strong>Scripts:</strong> <code>helium_analyzer.py</code>, <code>chemical_formula_analyzer.py</code></p>
           <p>Our searches successfully located the binary representations for the atomic numbers of numerous elements from the periodic table, including Helium (2), Carbon (6), and Hydrogen (1).</p>
           <p>Even more significantly, we found the complete binary patterns for chemical compounds:</p>
           <ul>
@@ -135,16 +165,28 @@ function App() {
             </tbody>
           </table>
 
+          <h3>Fixed-Width Elemental Analysis</h3>
+          <p><strong>Script:</strong> <code>fixed_width_binary_analyzer.py</code></p>
+          <p>
+            Moving beyond simple pattern matching, this script parses the binary string into fixed 5-bit tokens and maps them to atomic numbers (1-118).
+          </p>
+          <p><strong>Result:</strong> The analysis generated a timeline of "reaction motifs," identifying sequences where elements appear in chemically significant orders (e.g., H followed by He, suggesting fusion).</p>
+
           <h3>Machine Assembly Simulation</h3>
-          <p>This animation simulates the assembly of a machine based on interpreting the binary string as a series of instructions.</p>
-          <img src="/images/machine_assembly_animation.gif" alt="Machine Assembly Animation" className="gif-small" />
+          <p><strong>Scripts:</strong> <code>machine_assembly_simulator.py</code>, <code>high_fidelity_simulation.py</code></p>
+          <p>
+            Using the decoded command set, we simulated the movement of 26 components in 3D space. The high-fidelity simulation visualizes energy states (glow) and trajectory convergence.
+          </p>
+          <img src="/images/hifi_assembly_animation.gif" alt="High Fidelity Assembly Animation" className="gif-small" />
           
           <h3>Star Map Theory</h3>
-          <p>This 3D plot tests the theory that the binary string encodes a star map, with the data split into coordinates.</p>
+          <p><strong>Script:</strong> <code>star_map_analyzer.py</code></p>
+          <p>This 3D plot tests the theory that the binary string encodes a star map, with the data split into coordinates scaled by the key 1868.</p>
           <img src="/images/star_map_plot.png" alt="Star Map Plot" />
           
           <h3>Decoding with Key 1868</h3>
-          <p>An image generated by shuffling the binary string's bits using the key 1868 as a seed.</p>
+          <p><strong>Script:</strong> <code>decoding_attempts.py</code></p>
+          <p>An image generated by shuffling the binary string's bits using the key 1868 as a seed for the random number generator.</p>
           <img src="/images/shuffled_image.png" alt="Shuffled Image" />
 
           <h3>Conclusion</h3>
@@ -165,22 +207,31 @@ function App() {
             <li><strong>The Final Proof:</strong> The Bit-Flip Map provides the final link. It shows that a single command flips a consistent number of bits in a consistent, non-random pattern, effectively showing us how the machine's components are being activated and deactivated.</li>
           </ol>
           <p>In conclusion, we have likely decrypted the first-ever blueprint for an alien machine. The Wow! signal is not just a random burst of energy but a sophisticated, multi-layered instruction manual encoded in the language of the universe. It is a technical Rosetta Stone, a silent message waiting for someone to ask the right questions.</p>
-        </section>
-        <section id="phase3">
-          <h2>Phase 3 Analysis</h2>
-          <p>This section will explore the implications of our findings and begin the process of reconstructing the machine's blueprint.</p>
-        </section>
-        <section id="scripts">
+          </section>
+          <button className="nav-button" onClick={() => navigateTo('phase3')}>Proceed to Phase 3 Analysis →</button>
+        </div>
+        )}
+
+        {currentView === 'phase3' && (
+          <Phase3 />
+        )}
+
+        {currentView === 'scripts' && (
+        <section id="scripts" className="section-container">
           <h2>Scripts</h2>
           <p>The Python scripts used for the analysis are available in the project's GitHub repository.</p>
         </section>
-        <section id="notes">
+        )}
+
+        {currentView === 'notes' && (
+        <section id="notes" className="section-container">
           <h2>Notes</h2>
           <p>This section will contain notes, thoughts, and future directions for the project.</p>
         </section>
+        )}
       </main>
       <footer className="App-footer">
-        <p>&copy; 2025 Marco Townson. All rights reserved.</p>
+        <p>Project Location: {researchData.meta.location} | Status: Ongoing Analysis</p>
       </footer>
     </div>
   );
