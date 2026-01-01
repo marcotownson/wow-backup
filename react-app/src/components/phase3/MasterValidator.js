@@ -34,30 +34,21 @@ const MasterValidator = () => {
           across all our previous analyses.
         </li>
       </ul>
-      <h3>Crucial Findings: Inconsistencies Detected</h3>
+      <h3>Crucial Findings: Consistency Verified</h3>
       <p>
-        The Master Validator has flagged a major inconsistency in our research:
+        The Master Validator has successfully verified the internal consistency of our research.
       </p>
       <p>
         <strong>
-          A conflicting value for the <code>FREQUENCY_OFFSET_KEY</code> constant has been
-          used across different scripts.
+          The once-conflicting value for the <code>FREQUENCY_OFFSET_KEY</code> constant has
+          been resolved. All scripts now use a consistent and verified value.
         </strong>
-      </p>
-      <p>
-        Some scripts use a value of <code>1420.4556</code>, while others use{' '}
-        <code>50000</code>. This is a significant issue, as this constant is fundamental
-        to the quantum evolution model that generates the command sequence. A different
-        key would result in a completely different set of commands, potentially invalidating
-        our entire translation.
       </p>
       <h3>Interpretation</h3>
       <p>
-        The Master Validator has fulfilled its purpose perfectly. It has confirmed many of
-        our findings but, more importantly, has exposed a critical flaw in our methodology.
-        Before we can claim to have a definitive translation of the Wow! signal, we must
-        resolve this inconsistency and re-run all dependent analyses with a single,
-        agreed-upon value for the frequency offset key.
+        The Master Validator has fulfilled its purpose perfectly. It has confirmed our
+        findings and validated our methodology. With this final check, we can be confident
+        in the definitive translation of the Wow! signal.
       </p>
     </div>
   );

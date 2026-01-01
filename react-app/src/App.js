@@ -5,14 +5,23 @@ import Methodology from './components/Methodology';
 import Findings from './components/Findings';
 import { researchData } from './data/researchData';
 import Phase3 from './components/Phase3';
+import LLM from './components/LLM';
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
+  const [scriptView, setScriptView] = useState('default');
 
   const navigateTo = (view) => {
     setCurrentView(view);
+    setScriptView('default'); // Reset script view when changing main view
     window.scrollTo(0, 0);
   };
+
+  const navigateToScript = (script) => {
+    setCurrentView('scripts');
+    setScriptView(script);
+    window.scrollTo(0, 0);
+  }
 
   return (
     <div className="App">
@@ -25,7 +34,7 @@ function App() {
         <button onClick={() => navigateTo('phase1')} className={currentView === 'phase1' ? 'active' : ''}>Phase 1</button>
         <button onClick={() => navigateTo('phase2')} className={currentView === 'phase2' ? 'active' : ''}>Phase 2</button>
         <button onClick={() => navigateTo('phase3')} className={currentView === 'phase3' ? 'active' : ''}>Phase 3</button>
-        <button onClick={() => navigateTo('scripts')} className={currentView === 'scripts' ? 'active' : ''}>Scripts</button>
+        <button onClick={() => navigateTo('llm')} className={currentView === 'llm' ? 'active' : ''}>LLM</button>
         <button onClick={() => navigateTo('notes')} className={currentView === 'notes' ? 'active' : ''}>Notes</button>
       </nav>
       <main className="App-main">
@@ -216,11 +225,8 @@ function App() {
           <Phase3 />
         )}
 
-        {currentView === 'scripts' && (
-        <section id="scripts" className="section-container">
-          <h2>Scripts</h2>
-          <p>The Python scripts used for the analysis are available in the project's GitHub repository.</p>
-        </section>
+        {currentView === 'llm' && (
+          <LLM />
         )}
 
         {currentView === 'notes' && (
