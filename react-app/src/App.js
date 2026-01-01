@@ -6,6 +6,7 @@ import Findings from './components/Findings';
 import { researchData } from './data/researchData';
 import Phase3 from './components/Phase3';
 import LLM from './components/LLM';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -247,6 +248,7 @@ function App() {
       <footer className="App-footer">
         <p>Project Location: {researchData.meta.location} | Status: Ongoing Analysis</p>
       </footer>
+      <Analytics />
     </div>
   );
 }
