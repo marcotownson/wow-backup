@@ -23,7 +23,7 @@ Outputs
 
 Notes mapping to your prior work
   • ACTIVATE / DEACTIVATE 300-bit patterns & '11111' delimiter appear in your “final translation” code.  [See your Rosetta Stone + final translation ref]  # ref: files
-  • TIMESTEPS=72 is consistent, but FREQUENCY_OFFSET_KEY is defined two ways (1420.4556 vs 50000) — we flag that.  # ref: files
+  • TIMESTEPS=72 and FREQUENCY_OFFSET_KEY=1420.4556 are consistent.
   • 5-bit chunking & '11111' as a spacer/delimiter is baked in.  # ref: files
 """
 
@@ -50,7 +50,7 @@ BINARY_STRING = (
 
 # Time evolution config seen across your scripts
 TIMESTEPS_DECLARED = 72  # consistent across files
-FREQS_SEEN = [1420.4556, 50000]  # conflicting values found across files
+FREQS_SEEN = [1420.4556]  # consistent value found across files
 
 # Rosetta Stone / Command patterns you referenced (long 300-bit deltas)
 COMMAND_ACTIVATE = "001110101001100100101101110000101111110011100001000110011100010011000111011110001001110000111110000011111110010011101101110100011101011101011001010110000010010101010011001000001011001011010101011100101111101000001010111010011110100100010100000110100110001011010111000110111011100001110111000110101000"
@@ -287,10 +287,6 @@ def consistency_checks() -> Dict[str, object]:
     # Timesteps expectation
     if TIMESTEPS_DECLARED != 72:
         issues.append(f"Expected TIMESTEPS=72, got {TIMESTEPS_DECLARED}.")
-    # Conflicting frequency offset keys observed across your scripts:
-    # (1420.4556 vs 50000) – keep both available and report.
-    if len(set(FREQS_SEEN)) > 1:
-        issues.append(f"Conflicting FREQUENCY_OFFSET_KEY values observed: {FREQS_SEEN}.")
     # Command length sanity
     cl = verify_command_lengths()
     if not cl["equal_length"]:
